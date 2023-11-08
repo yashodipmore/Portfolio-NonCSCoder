@@ -65,6 +65,7 @@ sr.reveal('.skills__img',{delay: 600});
 /*SCROLL WORK*/
 sr.reveal('.work__img',{interval: 200}); 
 
+
 // Function to get the view count from local storage
 function getViewCount() {
     const storedViews = localStorage.getItem('profileViews');
@@ -85,4 +86,4 @@ function getViewCount() {
   
   // Call the function to update the view count
   updateViewCount();
-
+  
