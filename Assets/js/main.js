@@ -65,3 +65,24 @@ sr.reveal('.skills__img',{delay: 600});
 /*SCROLL WORK*/
 sr.reveal('.work__img',{interval: 200}); 
 
+// Function to get the view count from local storage
+function getViewCount() {
+    const storedViews = localStorage.getItem('profileViews');
+    return storedViews ? parseInt(storedViews, 10) : 0;
+  }
+  
+  // Function to update the view count in local storage
+  function updateViewCount() {
+    const profileViews = getViewCount() + 1;
+    localStorage.setItem('profileViews', profileViews.toString());
+  
+    // Update the view count display
+    const viewCountElement = document.getElementById('profile-views-count');
+    if (viewCountElement) {
+      viewCountElement.textContent = profileViews.toLocaleString(); // Format the number with commas
+    }
+  }
+  
+  // Call the function to update the view count
+  updateViewCount();
+
